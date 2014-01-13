@@ -1,38 +1,36 @@
 package com.example;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+public class AppTest{ 
+    
+	@Test
+	public void itShouldAddTwoNumber(){
+		int a =10;
+		int b = 20;
+		int expected = 30;
+		
+		App obj = new App();
+		
+		int actual = obj.add(a,b);
+		
+		assertEquals(actual,expected);
+		
+	}
+	
+	@Test
+	public void itShouldSubtractTwoNumbers(){
+		int a=40;
+		int b=10;
+		int expected = 30;
+		
+		App obj = new App();
+		
+		int actual = obj.sub(a,b);
+		assertEquals(actual,expected);
+		
+	}
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }
